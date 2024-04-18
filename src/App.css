@@ -1,38 +1,173 @@
-.App {
+/* General styling for the app */
+.app {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* Styling for the login form */
+h2 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+}
+
+input:focus, button:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+
+button {
+  background-color: #007bff;
   color: white;
+  cursor: pointer;
+  border-color: #007bff;
 }
 
-.App-link {
-  color: #61dafb;
+/* button:hover {
+  background-color: #0056b3;
+} */
+
+.error {
+  color: red;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Styling for the Tic Tac Toe board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* Creates three columns */
+  grid-template-rows: repeat(3, 100px); /* Creates three rows */
+  grid-gap: 10px;
+  margin-top: 2px;
+  width: 3px;
+  height: 300px;
+}
+
+.square {
+  background-color: #000000;
+  border: 1px solid #a7a7a7;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  display:block;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+/* .square:hover {
+  background-color: #0f0b0b;
+} */
+
+.status {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Instructions page styling */
+.instructions{
+  margin-top:450px;
+}
+.instructions-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+.instructions-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .board {
+    width: 90vw;
+    height: 90vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  input, button {
+    width: 90%;
   }
+}
+.winning-square {
+  position: relative;
+}
+
+.winning-square.vertical::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background-color: red;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.winning-square.diagonal::before {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 100%;
+  background-color: red;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.restart-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+.restart-button:hover {
+  background-color: #0056b3;
+}
+/* Existing styles */
+/* ... */
+
+/* Portfolio button styling */
+.portfolio-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+.portfolio-button:hover {
+  background-color: #0056b3;
 }
